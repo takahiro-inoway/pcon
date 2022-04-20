@@ -1,0 +1,117 @@
+
+#hoge{
+  animation: open1 0.3s;
+}
+@keyframes open1 {
+    0% {
+        height: 40px;
+    }
+    100% {
+        height: 0px;
+    }
+}
+@keyframes open2{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+*{
+  font-size: 9px;
+}
+body{
+  background: rgb(246,247,249);
+  font-family: "Meiryo UI";
+  color: rgb(34, 34, 34);
+  width: 100vw;
+  height: 100vh;
+}
+input{
+  border: 1px solid black;
+}
+body ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+body  ::-webkit-scrollbar-track {
+  background: #f1f2f3;
+}
+body  ::-webkit-scrollbar-thumb {
+  background: #c1cddf;
+}
+td{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-collapse: collapse;
+  overflow: hidden;
+  border: 1px solid rgb(120, 120, 120);
+}
+
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+} 
+
+
+#loading_window{
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 9999;
+  position: fixed;
+}
+.fd_console_home_panel{
+  width: 100px;
+  margin: 10px auto;
+}
+
+#fd_console_table{
+  width: 90vw;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+#fd_form{
+  margin: 0 0 100px 0;
+}
+#fd_form_company{
+  width: 200px;
+}
+
+#fd_form_table{
+  margin: 0 auto;
+  width: 900px;
+}
+.fd_console_td_enter{
+  background: rgb(204, 221, 255) !important;
+}
+/*Grid.jsの表示変更---*/
+.gridjs-th-content{
+  margin: 4px 0 !important;
+}
+.gridjs-input{
+  padding: 2px 8px !important;
+}
+/*-------------------*/
+
+
+/*--------------------------------------------------
+              【fd-traffic】
+--------------------------------------------------*/
+#fd_traffic_form{
+  display: flex;
+  line-height: 20px;
+  width: 750px;
+  margin: 0 auto;
+}
+#fd_traffic_form > input{
+  width: 80px;
+}
+#fd_traffic_form > div{
+  margin: 2px;
+}
+#traffic_service_number{
+  width: 200px;
+}
