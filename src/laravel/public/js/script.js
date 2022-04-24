@@ -1,3 +1,22 @@
+//
+// ・DB_DATAクラス
+//
+const DB_DATA = (() => {
+  // symbolを使用してModel.nameでアクセスできないようにする。
+  const name = Symbol('name');
+  return new class {
+    constructor() {
+      this[name] = DB_RECORDS;
+    }
+    DB(TableName) {
+      if (!this[name][TableName]) return [];
+      return this[name][TableName];
+    }
+  }
+})();
+
+
+
 
 /*=====================================================
 
@@ -7,8 +26,6 @@ DOM生成後処理
 window.addEventListener('DOMContentLoaded', function () {
   // ロード画面を閉じる
   document.getElementById("loading_window").style.display = "none";
-
-
 });
 
 // Mybrary.js からクラスを取得
