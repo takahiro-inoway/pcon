@@ -40,5 +40,4 @@
   <!--encoding-japanese ライブラリ-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/encoding-japanese/1.0.30/encoding.min.js"></script>
 
-  <link rel="stylesheet" href="<?php echo $directory; ?>css/style.css">
 </head>

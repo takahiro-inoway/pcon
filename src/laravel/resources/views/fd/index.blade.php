@@ -7,6 +7,7 @@
   <title>fd</title>
 </head>
 <body>
-  fd管理  
+  fd管理
+  {{ $values }}
 </body>
 </html>
