@@ -9,5 +9,7 @@
 <body>
   fd管理
   {{ $values }}
+  <a href="{{ asset('fd/traffic') }}">traffic</a>
+  <a href="{{ asset('fd/console') }}">cosole</a>
 </body>
 </html>

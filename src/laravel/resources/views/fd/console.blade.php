@@ -6,20 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
   <link rel="icon" type="image/png" href="">
   <title>Pcon FD管理コンソール</title>
-
   @include('fd/head')
-
-  <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+  <link rel="stylesheet" href="{{ asset('/css/fd/style.css') }}">
 </head>
 
 <body>
-
-
   <!--===================================================
-
-
     ローディング画面
-    ====================================================-->
+  ====================================================-->
   <div id="loading_window" style="background: #e8ecf2; text-align: center; padding: 46vh 0 0 0;">
     <div class="spinner-grow text-danger" role="status">
     </div>
@@ -32,9 +26,7 @@
 
   <!--===================================================
     FD管理コンソール表示
-    ====================================================-->
-
-
+  ====================================================-->
   <a href="{{ asset('fd/traffic') }}">トラフィックメニュー</a>
   <div class="fd_console_home_panel">
     <a href="./?page=edit" role="button" class="btn btn-secondary">追加</a>
@@ -93,38 +85,17 @@
 
   </form>
 
-
-
-
-
-
-
-
-
-
-
-
   <!-----------------------------------------------------
   JavaScript読み込み
   ------------------------------------------------------>
   <script>
-    /*
-    let fd_console_company = <?php // echo json_encode($fd_console_company); 
-                              ?>;
-    let fd_console_dial = <?php // echo json_encode($fd_console_dial); 
-                          ?>;
-    let fd_console_base = <?php // echo json_encode($fd_console_base); 
-                          ?>;
-    let fd_console_dialbase = <?php // echo json_encode($fd_console_dialbase); 
-                              ?>;
-    const fd_console_page_state = "<?php // echo $_SESSION['fd_console_page_state']; 
-                                    ?>";
-    //console.log(fd_console_company)
-    */
+    const DB_RECORDS = @json($consoles);
+    console.log(@json($consoles))
+    console.log(DB_RECORDS.post_param);
   </script>
-  <script src="{{ asset('/js/mybrary.js') }}"></script>
-  <script src="{{ asset('/js/config.js') }}"></script>
-  <script src="{{ asset('/js/script.js') }}"></script>
+  <script src="{{ asset('/js/fd/mybrary.js') }}"></script>
+  <script src="{{ asset('/js/fd/config.js') }}"></script>
+  <script src="{{ asset('/js/fd/console.js') }}"></script>
 </body>
 
 </html>

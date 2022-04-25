@@ -24,11 +24,14 @@ class FdController extends Controller
   //
   public function console()
   {
-
-    $companys = Consolecompany::all();
-
-    $values = 'test';
-    return view('fd/console', compact('values'));
+    $consoles = array(
+      'companys' => Consolecompany::all()->sortByDesc('id'),
+      'originvalues' => Originvalue::all()->sortByDesc('id'),
+      'bases' => Consolebase::all()->sortByDesc('id'),
+      'dialbases' => Consoledialbase::all()->sortByDesc('id'),
+      'post_param' => $_POST
+    );
+    return view('fd/console', compact('consoles'));
 
     // -----
 
@@ -170,8 +173,6 @@ class FdController extends Controller
       'originvalues' => Originvalue::all()->sortByDesc('id'),
       'post_param' => $_POST
     );
-
-    $values = 'test';
     return view('fd/traffic', compact('traffics'));
 
 

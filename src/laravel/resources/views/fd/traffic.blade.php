@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="">
   <title>Pcon トラフィックメニュー</title>
   @include('fd/head')
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="{{ asset('/css/fd/style.css')}}">
 </head>
 
 <body>
@@ -66,11 +66,11 @@
   <script>
     const DB_RECORDS = @json($traffics);
     console.log(@json($traffics))
-    console.log(Traffics.post_param);
+    console.log(DB_RECORDS.post_param);
   </script>
-  <script src="{{ asset('/js/mybrary.js') }}"></script>
-  <script src="{{ asset('/js/config.js') }}"></script>
-  <script src="{{ asset('/js/script.js') }}"></script>
+  <script src="{{ asset('/js/fd/mybrary.js') }}"></script>
+  <script src="{{ asset('/js/fd/config.js') }}"></script>
+  <script src="{{ asset('/js/fd/traffic.js') }}"></script>
 </body>
 
 </html>
