@@ -22,14 +22,15 @@ class FdController extends Controller
     return view('fd/index', compact('values'));
   }
   //
-  public function console()
+  public function console($page)
   {
     $consoles = array(
       'companys' => Consolecompany::all()->sortByDesc('id'),
       'originvalues' => Originvalue::all()->sortByDesc('id'),
       'bases' => Consolebase::all()->sortByDesc('id'),
       'dialbases' => Consoledialbase::all()->sortByDesc('id'),
-      'post_param' => $_POST
+      'post_param' => $_POST,
+      'page' => $page
     );
     return view('fd/console', compact('consoles'));
 
@@ -46,27 +47,6 @@ class FdController extends Controller
 
     各種データ取得
     ============*/
-    
-
-    if (!empty($pdo)) {
-
-      // fd_console_companyのデータを取得
-      $sql = "SELECT * FROM fd_console_company ORDER BY id DESC";
-      $stmt = $pdo->query($sql);
-      $fd_console_company = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      // fd_console_dialのデータを取得
-      $sql = "SELECT * FROM fd_console_dial ORDER BY id DESC";
-      $stmt = $pdo->query($sql);
-      $fd_console_dial = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      // fd_console_baseのデータを取得
-      $sql = "SELECT * FROM fd_console_base ORDER BY id DESC";
-      $stmt = $pdo->query($sql);
-      $fd_console_base = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      // fd_console_dialbaseのデータを取得
-      $sql = "SELECT * FROM fd_console_dialbase ORDER BY id DESC";
-      $stmt = $pdo->query($sql);
-      $fd_console_dialbase = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
     //var_dump($fd_console_base);
     //----------------------------------------------------------------------------------------
     /*============

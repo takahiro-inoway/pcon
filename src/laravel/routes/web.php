@@ -23,4 +23,5 @@ Route::resource('book', 'App\Http\Controllers\BookController');
 
 Route::get('fd', 'App\Http\Controllers\FdController@index');
 Route::get('fd/console', 'App\Http\Controllers\FdController@console');
+Route::get('fd/console/{page}', 'App\Http\Controllers\FdController@console');
 Route::get('fd/traffic', 'App\Http\Controllers\FdController@traffic');

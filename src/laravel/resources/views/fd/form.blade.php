@@ -1,24 +1,8 @@
-@extends('fd.layouts.base')
-@section('title', 'Pcon - FD管理コンソール')
-@section('content')
-@if($consoles['page'] == 'dashboard')
-<a href="{{ asset('fd/traffic') }}">トラフィックメニュー</a>
-<div class="fd_console_home_panel">
-  <a href="{{ asset('fd/console/edit') }}" role="button" class="btn btn-secondary">追加</a>
-  <div style="color: green;">
-    <?php if (!empty($_SESSION['success_message'])) {
-      echo $_SESSION['success_message'];
-      unset($_SESSION['success_message']);
-    } ?>
-  </div>
-</div>
-<div id="fd_console_table"></div>
-@endif
-@if($consoles['page'] == 'edit')
+@if ($target == 'store')
 <form id="fd_form" method="post" onsubmit="return fd_form_validation()">
 
   <div class="fd_console_home_panel">
-    <a href="{{ asset('fd/console/dashboard') }}" role="button" class="btn btn-secondary">戻る</a>
+    <a href="./?page=home" role="button" class="btn btn-secondary">戻る</a>
     <?php if (!empty($error_message)) { ?>
       <div style="color: red;"><?php echo $error_message; ?></div>
     <?php } ?>
@@ -59,15 +43,3 @@
 
 </form>
 @endif
-<!-----------------------------------------------------
-  JavaScript読み込み
------------------------------------------------------->
-<script>
-  const DB_RECORDS = @json($consoles);
-  console.log(@json($consoles))
-  console.log(DB_RECORDS.post_param);
-</script>
-<script src="{{ asset('/js/fd/mybrary.js') }}"></script>
-<script src="{{ asset('/js/fd/config.js') }}"></script>
-<script src="{{ asset('/js/fd/console.js') }}"></script>
-@endsection
